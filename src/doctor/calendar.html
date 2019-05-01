@@ -1,0 +1,36 @@
+<template>
+    <div class="calendar-container">
+      <div class="page-header">
+        <h1>${heading}</h1>
+        <a href="#release" class="btn btn-primary pull-xs-right">My Calendar</a>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="input-boxes">
+              <div class="input-container">
+                <input type="text" class="form-control" placeholder="Google Calendar URL">
+                <button type="button" class="btn btn-danger btn-sync">Sync</button>
+              </div>
+
+              <div class="input-container">
+                <input type="text" class="form-control" placeholder="Open OR Sharing URL">
+                <button type="button" class="btn btn-danger btn-sync">Sync</button>
+              </div>
+          </div>
+
+          <div class="instruction-container">
+            <div class="instruction-title"><h1>Instructions</h1></div>
+            <div class="instructions">
+              <p class="instruction-text" repeat.for="instruction of intructions">
+                  ${instruction}
+              </p>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </template>
+  

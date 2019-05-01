@@ -1,0 +1,46 @@
+<template>
+    <div class="prefernece-container">
+      <div class="page-header">
+        <h1>${headingPreferences}</h1>
+        <a href="#release" class="btn btn-primary pull-xs-right">My Calendar</a>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-12">
+          <div id='toggle-groups'>
+            <div>
+              <div class="toggle-container" repeat.for="toggle of togglesForPreferences">
+                <label for="preference-switcher-primary-${$index}" class="switcher switcher-primary">
+                  <input type="checkbox" id="preference-switcher-primary-${$index}" checked="">
+                  <div class="switcher-indicator">
+                    <div class="switcher-yes">YES</div>
+                    <div class="switcher-no">NO</div>
+                  </div>
+                  ${toggle.title}
+                </label>
+              </div>
+            </div>
+  
+            <div>
+              <div class="group-header">
+                <h1>${headingNotifications}</h1>
+              </div>
+  
+              <div class="toggle-container" repeat.for="toggle of togglesForNotifications">
+                <label for="notification-switcher-primary-${$index}" class="switcher switcher-primary">
+                  <input type="checkbox" id="notification-switcher-primary-${$index}" checked="">
+                  <div class="switcher-indicator">
+                    <div class="switcher-yes">YES</div>
+                    <div class="switcher-no">NO</div>
+                  </div>
+                  ${toggle.title}
+                </label>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  

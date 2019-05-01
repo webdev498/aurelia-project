@@ -1,0 +1,67 @@
+﻿<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" data-bind="click: cancel" aria-hidden="true">×</button>
+		<h4 class="modal-title"><i class="panel-title-icon fa fa-comments-o"></i>Conversation</h4>
+	</div>
+    <div class="modal-body widget-chat" id="dzConversation">
+        <div class="note note-info" data-bind="visible:loading() === true">
+            <h4 class="note-title no-margin-b text-bold"><i class="fa fa-fw fa-spinner fa-spin"></i>&nbsp;Loading conversation...</h4>
+        </div>
+        <div class="note note-info" data-bind="visible:uploadingAttachment() === true">
+            <h4 class="note-title no-margin-b text-bold"><i class="fa fa-fw fa-spinner fa-spin"></i>&nbsp;Adding attachment...</h4>
+        </div>
+        <div class="panel-body no-padding-t no-padding-hr" data-bind="visible:loading() === false && uploadingAttachment() === false">
+            <div class="well-sm alert-info" data-bind="visible: HasConversation() == false">
+                Type a comment in the box below and click "Add Comment" to start a conversation.
+            </div>
+            <!-- ko foreach: conversationDetails -->
+            <div class="message" data-bind="css: {'right': $data.IsAdminComment }">
+                <div class="message-body">
+                    <div class="message-heading">
+                        <span class="text-bold text-success" data-bind="text: $data.CreatedByName"></span> says:
+                        <span class="pull-right" data-bind="text: moment($data.DateCreated).format('MM/DD h:mm A') + ' (' + moment($data.DateCreated).fromNow() + ')'"></span>
+                    </div>
+                    <!--ko if: $data.IsAdminComment-->
+                    <div class="message-text-admin" data-bind="css: { 'message-attachment': $data.AttachmentId !== '00000000000000000000000000000000' }">
+                        <!-- ko if: $data.AttachmentId === '00000000000000000000000000000000'-->
+                        <span style="word-wrap: break-word;" data-bind="text: $data.Comment"></span>
+                        <!-- /ko -->
+                        <!-- ko if: $data.AttachmentId !== '00000000000000000000000000000000' && !$data.IsDeletedComment -->
+                        <strong><a style="color:#fff;" data-bind="attr: { href: $parent.baseUrlAttachment + $data.AttachmentId, target: '_blank' }"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;<span style="word-wrap: break-word;" data-bind="text: $data.Comment"></span></a></strong>
+                        <!-- /ko -->
+                        <!-- ko if: $data.AttachmentId !== '00000000000000000000000000000000' && $data.IsDeletedComment -->
+                        <strong><a style="color:#fff;"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;<span style="word-wrap: break-word;" text-decoration: line-through;" data-bind="text: $data.Comment"></span><span> (Deleted)</span></a></strong>
+                        <!-- /ko -->
+                    </div>
+                    <!-- /ko-->
+                    <!--ko ifnot: $data.IsAdminComment-->
+                    <div class="message-text" data-bind="css: { 'message-attachment': $data.AttachmentId !== '00000000000000000000000000000000' }">
+                        <!-- ko if: $data.AttachmentId == '00000000000000000000000000000000'-->
+                        <span style="word-wrap: break-word;" data-bind="text: $data.Comment"></span>
+                        <!-- /ko -->
+                        <!-- ko if: $data.AttachmentId !== '00000000000000000000000000000000' && !$data.IsDeletedComment -->
+                        <strong><a style="color:#fff;" data-bind="attr: { href: $parent.baseUrlAttachment + $data.AttachmentId, target: '_blank' }"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;<span style="word-wrap: break-word;" data-bind="text: $data.Comment"></span></a></strong>
+                        <!-- /ko -->
+                        <!-- ko if: $data.AttachmentId !== '00000000000000000000000000000000' && $data.IsDeletedComment -->
+                        <strong><a style="color:#fff;"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;<span style="word-wrap: break-word;" text-decoration: line-through;" data-bind="text: $data.Comment"></span><span> (Deleted)</span></a></strong>
+                        <!-- /ko -->
+                    </div>
+                    <!-- /ko-->
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="alert alert-danger text-center" data-bind="visible: IsClosed == true">
+            This conversation is READ ONLY because the status of this record is closed.
+        </div>
+        <div class="panel-footer no-padding no-border-t" data-bind="visible: uploadingAttachment() === false && IsClosed == false">
+            <textarea rows="2" class="form-control form-group-margin" placeholder="Enter a comment or drop a file to attach" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 64px;" data-bind="textInput: newComment"></textarea>      
+            <div style="float: left"><button id="convDropboxBtn" class="btn btn-xs btn-primary">Attach</button></div>
+            <div class="panel-heading-controls form-group-margin">                
+                <span class="panel-heading-text"><em><a href="#" data-bind="click: markAsUnread, visible: HasConversation() === true">Mark as Unread</a></em>&nbsp;&nbsp;<span style="color: #ccc" data-bind="visible: HasConversation() === true">|</span>&nbsp;&nbsp;</span>
+                <button id="btnSaveComment" class="btn btn-xs btn-primary" data-bind="click: save, enable: newComment().length > 0">Add Comment</button>
+            </div>
+        </div>
+    </div>
+</div> 
+	

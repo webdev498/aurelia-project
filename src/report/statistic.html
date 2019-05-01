@@ -1,0 +1,53 @@
+<template>
+    <div class="statistic-container">
+      <div class="page-header">
+        <h1>${heading}</h1>
+        <a href="#release" class="btn btn-primary pull-xs-right">My Calendar</a>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="filter-container">
+            <select class="custom-select form-control doctor-select">
+              <option disabled selected>Doctor Selection</option>
+              <option repeat.for="doctor of doctors">${doctor}</option>
+            </select>
+  
+            <div class="date-container">
+
+              <div class="input-daterange input-group" id="statistic-datepicker-range">
+                <input type="text" class="form-control" name="start" placeholder='Start Date'>
+                <span class="input-group-addon">to</span>
+                <input type="text" class="form-control" name="end" placeholder='End Date'>
+              </div>
+
+              <button type="button" class="btn btn-success date-go-button">Go</button>
+            </div>
+  
+            
+          </div>
+          
+          <div class="statistic-data-container">
+            <div class="row stats-row">
+              <div class="col-xs-12 col-sm-6 data-element" repeat.for="data of statistics">
+                <div class="data-count">
+                  ${data.count}
+                </div>
+                <div class="data-text">
+                  ${data.text}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions-container panel-body">
+            <button type="button" class="btn btn-success btn-rounded">Export to PDF</button>
+            <button type="button" class="btn btn-info btn-rounded">Send via Email</button>
+            <button type="button" class="btn btn-danger btn-rounded">Print Screen</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </template>
+  

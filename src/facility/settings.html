@@ -1,0 +1,48 @@
+<template>
+    <div class="facility-container">
+      <div class="page-header">
+        <h1>${heading}</h1>
+        <a href="#release" class="btn btn-primary pull-xs-right">My Calendar</a>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="block-container">
+            <div class="heading-title">Block size</div>
+            
+            <select class="custom-select form-control block-select">
+              <option repeat.for="i of 24">${i} hours</option>
+            </select>
+
+          </div>
+
+          <div class="availability-container">
+            <div class="heading-title">Availability</div>
+
+            <div class="input-daterange input-group" id="availability-datepicker-range">
+              <input type="text" class="form-control" name="start" placeholder="Start date">
+              <span class="input-group-addon">to</span>
+              <input type="text" class="form-control" name="end" placeholder="End data">
+            </div>
+          </div>
+          
+          <div class="day-container">
+            <div class="" repeat.for="day of days">
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                ${day}
+              </label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input type="text" class="form-control" placeholder="Calendar Share URL">
+            <button type="button" class="btn btn-success save-button">Save</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </template>
+  

@@ -1,0 +1,64 @@
+﻿<div>
+    <div class="page-header">
+        <h3>Support Ticket System</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form class="panel form-horizontal">
+                <div class="panel-heading">
+                    <span class="panel-title">Create Support Ticket</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Agent:</label>
+                            <input type="text" class="form-control form-group-margin" data-bind="value: agent.fullName()" disabled="disabled"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Email:</label>
+                            <input type="text" class="form-control form-group-margin" data-bind="value: agent.appreciationEmail()" disabled="disabled" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Issue Type:</label>
+                            <select class="form-control form-group-margin" data-bind="options: availableTicketTypes, optionsText: 'Description', optionsValue: 'TicketTypeId', value: selectedTicketType, optionsCaption: ''"></select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Is this a follow up?</label>
+                            <select class="form-control form-group-margin" data-bind="value: isFollowUp">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div><!-- row -->
+                    <textarea class="form-control" rows="5" placeholder="Message" data-bind="textInput: ticketMsg"></textarea>
+                </div>
+                <div class="panel-footer text-right">
+                    <button class="btn btn-default" data-bind="click: clearForm">Cancel</button>
+                    <button class="btn btn-primary" data-bind="click: submitTicket, enable: canSubmitTicket">Submit Ticket</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" >
+            <div class="table-header">
+                <div class="table-caption">
+                    My Support Tickets
+                </div>
+            </div>
+            <table id="tblUserTickets" class="table table-success table-bordered" style="overflow: auto;">
+                <thead>
+                    <tr>
+                        <th class="valign-middle" >Ticket Date</th>
+                        <th class="valign-middle" >Type</th>
+                        <th class="valign-middle" >Issue</th>
+                        <th class="valign-middle" >Resolution</th>
+                        <th class="valign-middle" >Closed Date</th>
+                        <th class="valign-middle" >Messages</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

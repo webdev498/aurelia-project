@@ -1,0 +1,77 @@
+<template>
+  <div class="page-header">
+    <h1>Doctor Details</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 form-group">
+      <label for="grid-input-16">Name</label>
+      <input type="text" id="grid-input-16" class="form-control" value.bind="name">
+    </div>
+    <div class="col-sm-4 form-group">
+      <label for="grid-input-17">Phone</label>
+      <input type="text" id="grid-input-17" class="form-control" value.bind="phone">
+    </div>
+    <div class="col-sm-4 form-group">
+      <label for="grid-input-18">E-mail</label>
+      <input type="text" id="grid-input-18" class="form-control" value.bind="email">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 form-group">
+      <label for="grid-input-18">Default Schedule</label><br>
+      <label class="custom-control custom-checkbox checkbox-inline">
+        <input type="checkbox" class="custom-control-input" value.bind="day">
+        <span class="custom-control-indicator"></span>
+        Sunday
+      </label>
+      <label class="custom-control custom-checkbox checkbox-inline">
+        <input type="checkbox" class="custom-control-input" value.bind="day">
+        <span class="custom-control-indicator"></span>
+        Monday
+      </label>
+      <label class="custom-control custom-checkbox checkbox-inline">
+        <input type="checkbox" class="custom-control-input" value.bind="day">
+        <span class="custom-control-indicator"></span>
+        Tuesday
+      </label>
+      <label class="custom-control custom-checkbox checkbox-inline">
+        <input type="checkbox" class="custom-control-input" value.bind="day">
+        <span class="custom-control-indicator"></span>
+        Wednesday
+      </label>
+      <label class="custom-control custom-checkbox checkbox-inline">
+        <input type="checkbox" class="custom-control-input" value.bind="day">
+        <span class="custom-control-indicator"></span>
+        Thursday
+      </label>
+      <label class="custom-control custom-checkbox checkbox-inline">
+        <input type="checkbox" class="custom-control-input" value.bind="day">
+        <span class="custom-control-indicator"></span>
+        Friday
+      </label>
+      <label class="custom-control custom-checkbox checkbox-inline">
+        <input type="checkbox" class="custom-control-input" value.bind="day">
+        <span class="custom-control-indicator"></span>
+        Saturday
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 form-group">
+      <label for="switcher-success" class="switcher switcher-success">
+        <input type="checkbox" id="switcher-success" checked="" value.bind="isFastPass">
+        <div class="switcher-indicator">
+          <div class="switcher-yes">YES</div>
+          <div class="switcher-no">NO</div>
+        </div>
+        FAST PASS
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 form-group">
+      <button type="button" class="btn btn-info" click.delegate="onClickSave()">Save</button>
+      <button type="button" class="btn btn-danger btn-outline">Cancel</button>
+    </div>
+  </div>
+</template>

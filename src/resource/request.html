@@ -1,0 +1,43 @@
+<template>
+  <div class="pricing-page-header page-header panel text-xs-center">
+    <h1 class="font-size-24 font-weight-bold m-b-1">${day.format('dddd[, ] MMMM Do YYYY')}</h1>
+    <p class="m-b-4 font-size-18 text-muted">${times}</p>
+    <a href="#" class="btn btn-lg btn-default font-weight-bold" click.delegate="cancel()">Cancel</a>
+  </div>
+
+  <hr class="page-wide-block m-y-0">
+
+  <!-- Plans & pricing -->
+
+  <div class="widget-pricing widget-pricing-expanded">
+    <div class="widget-pricing-inner row">
+      <div class="col-md-4">
+        <div class="widget-pricing-item">
+          <h2 class="widget-pricing-plan">Ochsner Clinic</h2>
+          <div class="widget-pricing-section p-y-2 bg-primary darker">
+            <div class="font-size-11 font-weight-semibold text-muted">Outpatient Room C</div>
+          </div>
+          <div class="widget-pricing-section"><button type="button" class="btn btn-lg btn-outline btn-primary" click.delegate="submit()">Select</button></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget-pricing-item">
+          <h2 class="widget-pricing-plan">Baton Rouge General</h2>
+          <div class="widget-pricing-section p-y-2 bg-primary">
+            <div class="font-size-11 font-weight-semibold text-muted">Outpatient Room A</div>
+          </div>
+          <div class="widget-pricing-section"><button type="button" class="btn btn-lg btn-outline btn-primary" click.delegate="submit()">Select</button></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget-pricing-item">
+          <h2 class="widget-pricing-plan">Our Lady of the Lake</h2>
+          <div class="widget-pricing-section p-y-2 bg-primary darker">
+            <div class="font-size-11 font-weight-semibold text-muted">Outpatient Room B</div>
+          </div>
+          <div class="widget-pricing-section"><button type="button" class="btn btn-lg btn-outline btn-primary" click.delegate="submit()">Select</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

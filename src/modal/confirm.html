@@ -1,0 +1,21 @@
+<template>
+  <ux-dialog view-spy compile-spy>
+    <ux-dialog-header class="bg-open-red">
+      <div class="modal-title font-size-18">${model.header}</div>
+    </ux-dialog-header>
+    <ux-dialog-body class="text-xs-center">
+      <h1 class="font-size-24 font-weight-bold m-y-1">${model.day.format('dddd[, ] MMMM Do YYYY')}</h1>
+        <ul class="list-group m-b-1">
+          <template repeat.for="i of model.numResources">
+            <li class="list-group-item font-size-18" click.delegate="selectResource($event)">
+              ${model.times[i]}
+            </li>
+          </template>
+        </ul>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button class="btn btn-default pull-xs-left" click.trigger="controller.cancel()">Cancel</button>
+      <button class="btn btn-primary" show.bind="hasSelection" click.trigger="controller.ok(true)">Request Block</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

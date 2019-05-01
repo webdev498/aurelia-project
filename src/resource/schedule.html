@@ -1,0 +1,84 @@
+<template>
+  <div class="page-header">
+    <h1>Request Resources:</h1>
+    <a href="#release" class="btn btn-primary pull-xs-right">View My Calendar</a>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+        <div class="form-inline">
+            <div class="form-group">
+              <label class="font-size-16 m-r-2" for="">Block Size</label>
+               <select class="form-control" value.bind="blockSize">
+                  <option value="all">All Blocks</option>
+                  <option value="1">1 hour</option>
+                  <option value="2">2 hours</option>
+                  <option value="3">3 hours</option>
+                  <option value="4">4 hours</option>
+                  <option value="5">5 hours</option>
+                  <option value="6">6 hours</option>
+                  <option value="7">7 hours</option>
+                  <option value="8">8 hours</option>
+                </select>
+            </div>
+          </div>
+    </div>
+    <div class="col-xs-6 ">
+        <div class="pull-xs-right m-t-2">
+            <label for="notification-switcher-primary" class="switcher switcher-primary">
+              <input type="checkbox" id="notification-switcher-primary" checked="">
+              <div class="switcher-indicator">
+                <div class="switcher-yes">WEEK</div>
+                <div class="switcher-no">MTH</div>
+              </div>
+            </label>
+      
+          </div>
+      </div>
+  </div>
+  
+  
+  <hr class="page-wide-block">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel box">
+          <div class="box-row">
+            <div class="box-container">
+              <div class="box-cell p-x-3 bg-info">
+                  <nav>
+                      <ul class="pager">
+                        <li class="previous"><a href="#" click.delegate="previousWeek()">← <span class="hidden-xs">Previous Week</span></a></li>
+                        <li class="display-inline-block"><div class="text-xs-center font-weight-semibold font-size-24 text-uppercase" innerhtml.bind="today.format('MMMM')"></div></li>
+                        <li class="next"><a href="#" click.delegate="nextWeek()"><span class="hidden-xs">Next Week</span> →</a></li>
+                      </ul>
+                    </nav>
+              </div>
+            </div> <!-- / .box-container -->
+          </div>
+        <div class="box-row">
+          <div class="box-container text-xs-center">
+            <div class="box-row valign-middle">
+              <div repeat.for="day of dates" class="box-cell p-y-1 b-r-1" class.bind="$parent.today.format('MM/DD/YYYY') === day.format('MM/DD/YYYY') ? 'bg-warning' : ''">
+                <div class="font-size-16 font-weight-semibold text-uppercase" innerhtml.bind="day.format('ddd')"></div>
+                <div class="font-size-34 font-weight-bold" innerhtml.bind="day.format('DD')"></div>
+                <!-- <div class="font-size-16 font-weight-semibold text-uppercase" innerhtml.bind="day.format('MMM')"></div> -->
+              </div>
+            </div>
+            <div class="box-row valign-middle" repeat.for="i of 1">
+              <template repeat.for="resource of slots[0].resources">
+                  <a href="#" class="box-cell p-y-4 b-t-1 b-r-1 font-size-14" class.bind="resource > 0 ? 'bg-success text-white' : 'text-default'" click.delegate="$this.requestResource($index, resource)">
+                      <span class="hidden-xs">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-square-o fa-stack-2x"></i>
+                          ${resource} 
+                          
+                        </span>
+                      </span>
+                  </a>
+              </template>
+            </div>
+          </div> <!-- / .box-container -->
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

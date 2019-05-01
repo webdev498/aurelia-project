@@ -1,0 +1,317 @@
+@import '../css/bootstrap.min.css'; //base bootstrap css
+@import '../css/pixeladmin.min.css'; //base pixeladmin css
+@import '../css/widgets.min.css'; //base widget css
+@import '../css/themes/white.min.css'; //template theme css
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); //fontawesome css from cdn
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin'); //google fonts used in template
+@import url('//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css'); //fullcalendar css from cdn
+@import url('//cdnjs.cloudflare.com/ajax/libs/fullcalendar-scheduler/1.9.4/scheduler.min.css'); //fullcalendar scheduler css from cdn
+@import url('//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css');
+//@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+// @import url("//cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"); //daterangepicker scheduler css from cdn
+
+/*ALL CUSTOM STYLES GO HERE INCLUDING ONES THAT OVERRIDE STYLES IN THE PIXEL ADMIN TEMPLATE USED*/
+.border-open-red{
+  border-color:#c72129 !important;
+}
+.bg-open-red{
+  background-color:#c72129 !important;
+  color:#fff;
+}
+.header-logo{
+  margin-top:9px;
+  margin-bottom:9px;
+}
+.pace-progress {
+  background: #C72129;
+}
+/* FULL CALENDAR MODS */
+.fc-prev-button{
+  min-width: 40px;
+}
+.fc-next-button{
+  min-width: 40px;
+}
+.fc-month-button{
+  min-width: 40px;
+}
+.fc-listYear-button{
+  min-width: 40px;
+}
+.fc-event {
+  border: 1px solid #31accf
+}
+
+.fc-event,
+.fc-event-dot {
+  background-color: #4ab6d5
+}
+.fc-list-view{
+  border-color:#eee;
+}
+/* FULL CALENDAR MODS */
+
+/* AURELIA DIALOG MODS */
+ux-dialog-overlay.active {
+  background-color: black;
+  opacity: .5;
+}
+/* AURELIA DIALOG MODS */
+
+/* RESOURCE REQUEST STYLES */
+.widget-pricing,
+.pricing-page-customers-logos {
+  max-width: 800px;
+}
+
+.pricing-page-header.page-header {
+  margin-bottom: 0;
+  padding-top: 80px;
+  padding-bottom: 160px;
+
+  border: none;
+  border-radius: 0;
+}
+
+.widget-pricing {
+  margin-top: -90px;
+}
+
+.pricing-page-customers {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  background: rgba(0, 0, 0, .04);
+}
+
+.pricing-page-customers-logos {
+  margin: 0 auto;
+
+  opacity: .4;
+}
+
+.pricing-page-customers-logos img {
+  height: 50px;
+  margin: 0 10px;
+}
+/* RESOURCE REQUEST STYLES */
+
+/* SIGN IN PAGE STYLES BEGIN */
+.page-signin-modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+
+.page-signin-form-group { position: relative; }
+
+.page-signin-icon {
+  position: absolute;
+  line-height: 21px;
+  width: 36px;
+  border-color: rgba(0, 0, 0, .14);
+  border-right-width: 1px;
+  border-right-style: solid;
+  left: 1px;
+  top: 9px;
+  text-align: center;
+  font-size: 15px;
+}
+
+html[dir="rtl"] .page-signin-icon {
+  border-right: 0;
+  border-left-width: 1px;
+  border-left-style: solid;
+  left: auto;
+  right: 1px;
+}
+
+html:not([dir="rtl"]) .page-signin-icon + .page-signin-form-control { padding-left: 50px; }
+html[dir="rtl"] .page-signin-icon + .page-signin-form-control { padding-right: 50px; }
+
+#page-signin-forgot-form {
+  display: none;
+}
+
+/* Margins */
+
+.page-signin-modal > .modal-dialog { margin: 30px 10px; }
+
+@media (min-width: 544px) {
+  .page-signin-modal > .modal-dialog { margin: 60px auto; }
+}
+/* SIGN IN PAGE STYLES END */
+
+/* PREFERENCE PAGE STYLES */
+.prefernece-container {
+  .group-header  {
+    border-bottom: 1px solid #eceeef;
+    margin: 20px -20px 20px;
+    padding: 20px;
+
+    h1 {
+      margin: 0;
+      vertical-align: middle;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 30px;
+    }
+  }
+
+  .toggle-container {
+    display: flex;
+    margin: 10px 0;
+
+    .toggle-title {
+      margin-left: 20px;
+    }
+  }
+}
+
+/* Calendar Integration */ 
+
+.calendar-container {
+  .input-boxes {
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      max-width: 500px;
+      margin: 20px 0;
+
+      .btn-sync {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .instruction-container {
+    .instruction-title {
+      border-bottom: 1px solid #eceeef;
+      margin: 20px -20px 20px;
+      padding: 20px;
+
+      h1 {
+        margin: 0;
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+/* Statistics */ 
+
+.statistic-container {
+  .filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .doctor-select {
+      width: 150px;
+    }
+
+    .date-container {
+      display: flex;
+      
+      .date-go-button {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .statistic-data-container {
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .data-element {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+  
+        .data-count {
+          width: 35px;
+          height: 35px;
+          border: 2px solid #eceeef;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 6px;
+          flex-shrink: 0;
+        }
+  
+        .data-text {
+          margin-left: 10px;
+          font-weight: 600;
+        }
+      }
+    }
+    
+  }
+
+  .actions-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    button {
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+
+
+/* Facility Setting */ 
+.facility-container {
+
+  .heading-title {
+    font-size: 12pt;
+    width: 150px;
+  }
+
+  .block-container {
+    display: flex;
+    align-items: center;
+
+    .block-select {
+      width: 150px;
+    }
+  }
+
+  .availability-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    span {
+      margin: 0 5px;
+    }
+  }
+
+  .day-container {
+    margin: 10px 0 20px 150px;
+  }
+
+  .input-container {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .save-button {
+      margin-top: 10px;
+    }
+  }
+}

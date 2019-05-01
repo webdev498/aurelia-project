@@ -1,0 +1,53 @@
+﻿<div>
+    <div class="page-header">
+        <h3>Support Ticket System</h3>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-6" style="overflow-x:auto;">
+                <div class="table-header">
+                    <div class="table-caption">
+                        Open Tickets
+                        <select class="input-sm col-md-3 pull-right" data-bind="options: availableAdmins, optionsText: 'AgentName', value: selectedAdmin"></select>
+                    </div>
+                </div>
+                <table id="tblOpenTickets" class="table table-success table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="valign-middle" style="width:5%">Id</th>
+                            <th class="valign-middle" style="width:10%">Ticket Date</th>
+                            <th class="valign-middle" style="width:10%">Type</th>
+                            <th class="valign-middle" style="width:10%">Agent</th>
+                            <th class="valign-middle" style="width:30%">Issue</th>
+                            <th class="valign-middle" style="width:10%"></th>
+                            <th class="valign-middle" style="width:10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="col-md-6" style="overflow-x:auto;">
+                <div class="table-header">
+                    <div class="table-caption">
+                        Closed Tickets
+                    </div>
+                </div>
+                <table id="tblClosedTickets" class="table table-success table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="valign-middle" style="width:5%">Id</th>
+                            <th class="valign-middle" style="width:10%">Ticket Date</th>
+                            <th class="valign-middle" style="width:10%">Type</th>
+                            <th class="valign-middle" style="width:10%">Agent</th>
+                            <th class="valign-middle" style="width:20%">Issue</th>
+                            <th class="valign-middle" style="width:20%">Resolution</th>
+                            <th class="valign-middle" style="width:10%">Closed Date</th>
+                            <th class="valign-middle" style="width:15%"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    
+</div>

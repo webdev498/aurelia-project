@@ -1,0 +1,67 @@
+<template>
+  <!-- Nav -->
+  <nav if.bind="global.isAuthenticated" class="px-nav px-nav-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <!-- <li class="px-nav-item active">
+          <a href="#"><i class="px-nav-icon fa fa-home"></i><span class="px-nav-label">Home</span></a>
+      </li> -->
+      <li class="px-nav-item active">
+        <a href="#release"><i class="px-nav-icon fa fa-calendar"></i><span class="px-nav-label">My Calendar</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#schedule"><i class="px-nav-icon fa fa-calendar-plus-o"></i><span class="px-nav-label">Request
+            Resource</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#preference"><i class="px-nav-icon fa fa-cog"></i><span class="px-nav-label">Preferences</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#calendar"><i class="px-nav-icon fa fa-calendar"></i><span class="px-nav-label">Calendar Integration</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#statistic"><i class="px-nav-icon fa fa-line-chart"></i><span class="px-nav-label">Statistics</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#facility"><i class="px-nav-icon fa fa-tachometer"></i><span class="px-nav-label">Facility</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#docadmin"><i class="px-nav-icon fa fa-user-md"></i><span class="px-nav-label">Doctor Management</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#support-admin"><i class="px-nav-icon fa fa-question-circle"></i><span class="px-nav-label">Support</span></a>
+      </li>
+      <li class="px-nav-item active">
+        <a href="#" click.delegate="signout()"><i class="px-nav-icon fa fa-sign-out"></i><span class="px-nav-label">Log Out</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Navbar -->
+  <nav if.bind="global.isAuthenticated" class="navbar px-navbar">
+    <div class="navbar-header">
+      <img class="header-logo" src="../static/assets/logos/logo-transparent-sm.png">
+    </div>
+    <div class="collapse navbar-collapse" id="px-demo-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <select class="form-control" style="width: 200px;margin-top:9px;">
+            <option selected="selected">Dr. Wade Lukken</option>
+            <option>Dr. Grant Wittstruck</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="px-content">
+    <router-view></router-view>
+  </div>
+
+</template>
